@@ -2,6 +2,7 @@ package com.br.servicesimpl.service.impl;
 
 import com.br.domain.entity.Role;
 import com.br.domain.entity.RoleMembership;
+import com.br.servicesimpl.exceptions.RoleMembershipException;
 import com.br.servicesimpl.repository.RoleRepository;
 import com.br.servicesimpl.repository.RoleMembershipRepository;
 import com.br.servicesimpl.service.RoleMembershipService;
@@ -48,7 +49,10 @@ public class RoleMembershipServiceImpl implements RoleMembershipService {
     }
 
     @Override
-    public RoleMembership createRoleMembership(RoleMembership roleMembership) {
+    public RoleMembership createRoleMembership(RoleMembership roleMembership) throws RoleMembershipException {
+        if (roleMembershipRepository.existsUserWithRoleIdInGroup(roleMembership.getTeam().getId())) {
+            throw new RoleMembershipException("User with role ID 5 already exists in group");
+        }
         return roleMembershipRepository.save(roleMembership);
     }
 

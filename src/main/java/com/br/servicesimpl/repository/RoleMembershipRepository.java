@@ -29,6 +29,10 @@ public interface RoleMembershipRepository extends JpaRepository<RoleMembership, 
     @Query("SELECT tm FROM RoleMembership tm WHERE tm.user.id = :userId AND tm.team.id = :teamId AND tm.role.id = :roleId")
     Optional<RoleMembership> findByUserIdAndTeamIdAndRoleId(@Param("userId") Long userId, @Param("teamId") Long teamId, @Param("roleId") Long roleId);
 
+    @Query("SELECT COUNT(*) > 0 FROM RoleMembership rm WHERE rm.role.id = 5 AND :groupId MEMBER OF rm.user.teams")
+    boolean existsUserWithRoleIdInGroup(@Param("groupId") Long groupId);
+
+
     List<RoleMembership> findAll();
 
     default boolean existsByTeamIdAndUserId(Long teamId, Long userId) {
