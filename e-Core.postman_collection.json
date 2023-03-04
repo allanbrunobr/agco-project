@@ -1,0 +1,756 @@
+{
+	"info": {
+		"_postman_id": "22acf7e8-ebcc-4ac5-aaa2-77801bb25d56",
+		"name": "e-Core",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18142632"
+	},
+	"item": [
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "GET All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{role-localhost}}/roles/4",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Allan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{role-localhost}}/roles",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Alterada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{role-localhost}}/roles/4",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{role-localhost}}/roles/6",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ROLE -> USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{role-localhost}}/roles/memberships/{memberId}/{teamId}/{roleId}",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"memberships",
+								"{memberId}",
+								"{teamId}",
+								"{roleId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ROLE BY userID+teamID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{role-localhost}}/roles/membership/{userId}/{teamId}",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"membership",
+								"{userId}",
+								"{teamId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ALL Roles By USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{role-localhost}}/roles/memberships/user/{userId}",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"memberships",
+								"user",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All ROLES by TEAM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{role-localhost}}/roles/memberships/team/{teamId}",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"memberships",
+								"team",
+								"{teamId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ALL MEMBERSHIP by ROLE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{role-localhost}}/roles/{roleId}/memberships",
+							"host": [
+								"{{role-localhost}}"
+							],
+							"path": [
+								"roles",
+								"{roleId}",
+								"memberships"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GET by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{id}",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"João da Silva\" \r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{id}",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{id}",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ROLE BY userID+teamID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{userId}/role/{teamId}",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{userId}",
+								"role",
+								"{teamId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ROLE -> USER using teamId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{userId}/team/{teamId}/role/{roleId}",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{userId}",
+								"team",
+								"{teamId}",
+								"role",
+								"{roleId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User's ROLE by userId+teamId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{userId}/role?teamId={teamId}",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{userId}",
+								"role"
+							],
+							"query": [
+								{
+									"key": "teamId",
+									"value": "{teamId}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USERS by teamId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{teamId}/members",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{teamId}",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MEMBERSHIP by userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-localhost}}/users/{userId}/memberships",
+							"host": [
+								"{{user-localhost}}"
+							],
+							"path": [
+								"users",
+								"{userId}",
+								"memberships"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "team",
+			"item": [
+				{
+					"name": "GET by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/teams/1",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Time A\",\r\n  \"leader\": {\r\n    \"id\": 1,\r\n    \"name\": \"Fulano\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{team-localhost}}/teams",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Time A atualizado\",\r\n  \"leader\": {\r\n    \"id\": 1,\r\n    \"name\": \"Fulano\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{team-localhost}}/teams/{id}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/teams/{id}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD USER TO TEAM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/teams/{teamId}/members/{memberId}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams",
+								"{teamId}",
+								"members",
+								"{memberId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER from TEAM",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/teams/{teamId}/members/{memberId}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams",
+								"{teamId}",
+								"members",
+								"{memberId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS from TEAM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/teams/{teamId}/members",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams",
+								"{teamId}",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL TEAMS from USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/teams/{userId}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"teams",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "membership",
+			"item": [
+				{
+					"name": "GET ALL MEMBERSHIPS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/role-memberships/all",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"role-memberships",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MEMBERSHIPS by userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/role-memberships/by-user/{userId}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"role-memberships",
+								"by-user",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MEMBERSHIPS by teamId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/role-memberships/by-team/{teamId}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"role-memberships",
+								"by-team",
+								"{teamId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MEMBERSHIP by roleId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/role-memberships/by-role/{roleId}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"role-memberships",
+								"by-role",
+								"{roleId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE new USER+TEAM association",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": {\r\n    \"id\": 2,\r\n    \"name\": \"Allan\"\r\n  },\r\n  \"team\": {\r\n    \"id\": 4,\r\n    \"name\": \"TIME A\"\r\n  },\r\n  \"role\": {\r\n    \"id\": 4,\r\n    \"name\": \"Developer\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{team-localhost}}/role-memberships",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"role-memberships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MEMBERSHIP by userId+teamId+roleId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/role-memberships/by-user-team-role?userId={userId}&teamId={teamId}&roleId={roleId}",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"role-memberships",
+								"by-user-team-role"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{userId}"
+								},
+								{
+									"key": "teamId",
+									"value": "{teamId}"
+								},
+								{
+									"key": "roleId",
+									"value": "{roleId}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS with same roleID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{team-localhost}}/role-memberships/by-role/{roleId}/members",
+							"host": [
+								"{{team-localhost}}"
+							],
+							"path": [
+								"role-memberships",
+								"by-role",
+								"{roleId}",
+								"members"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
